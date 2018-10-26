@@ -1,4 +1,4 @@
-var d3 = require("d3");
+// var d3 = require("d3");
 var fs = require("fs");
 var papa = require("papaparse");
 var _ = require('lodash');
@@ -41,7 +41,8 @@ const americans = athleteEvents.filter(person => person["NOC"] === 'USA');
 
 const uniqueAmericans = _.uniqWith(americans, (persona, personb) => persona["Name"] === personb["Name"] && persona["Year"] === personb["Year"]
 );
-console.log(uniqueAmericans.length);
+// console.log(uniqueAmericans.length);
+
 
 
 // console.log(sum);
@@ -49,3 +50,7 @@ console.log(uniqueAmericans.length);
 // for(let i = 0; i < 100; i++) {
 //     console.log(athleteEvents[i]["Name"], athleteEvents[i]["Year"]);
 // }
+
+module.exports = {
+    americans : uniqueAmericans
+}
