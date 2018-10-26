@@ -30,12 +30,22 @@ console.log(sum);
 
 athleteEvents = athleteEvents.data;
 sum = 0;
-const uniqueathletes = _.uniqBy(athleteEvents, "Name");
-console.log(uniqueathletes);
+console.log("uniquing below");
+
+
+const americans = athleteEvents.filter(person => person["NOC"] === 'USA');
+// console.log(americans);
+
+// console.log(americans[0]["Name"]);
+
+
+const uniqueAmericans = _.uniqWith(americans, (persona, personb) => persona["Name"] === personb["Name"] && persona["Year"] === personb["Year"]
+);
+console.log(uniqueAmericans.length);
 
 
 // console.log(sum);
 
 // for(let i = 0; i < 100; i++) {
-//     console.log(athleteEvents.data[i]["Name"], athleteEvents.data[i]["Year"]);
+//     console.log(athleteEvents[i]["Name"], athleteEvents[i]["Year"]);
 // }
